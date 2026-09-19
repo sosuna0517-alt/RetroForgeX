@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui-master\imgui.cpp">
+      <Filter>Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui-master\imgui_demo.cpp">
+      <Filter>Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui-master\imgui_draw.cpp">
+      <Filter>Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui-master\imgui_tables.cpp">
+      <Filter>Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui-master\imgui_widgets.cpp">
+      <Filter>Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui-master\backends\imgui_impl_dx12.cpp">
+      <Filter>Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui-master\misc\cpp\imgui_stdlib.cpp">
+      <Filter>Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\audio\xaudio2_audio.cpp" />
+    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\core\environment_handler.cpp" />
+    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\core\libretro_host.cpp" />
+    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\core\main_loop.cpp" />
+    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\input\wgi_input.cpp" />
+    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\storage\vfs_storage.cpp" />
+    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\ui\imgui_uwp_backend.cpp" />
+    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\ui\quick_menu.cpp" />
+    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\video\d3d12_video.cpp" />
+    <ClCompile Include="CoreUpdater.cpp" />
+    <ClCompile Include="miniz.c" />
+    <ClCompile Include="BladeMenu.cpp" />
+    <ClCompile Include="CoreRegistrations.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="..\..\..\Downloads\libretro.h" />
+    <ClInclude Include="..\..\..\Downloads\imgui-master\imgui-master\imconfig.h">
+      <Filter>Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\imgui-master\imgui-master\imgui.h">
+      <Filter>Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\imgui-master\imgui-master\imgui_internal.h">
+      <Filter>Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\imgui-master\imgui-master\imstb_rectpack.h">
+      <Filter>Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\imgui-master\imgui-master\backends\imgui_impl_dx12.h">
+      <Filter>Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\audio\xaudio2_audio.hpp" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\core\environment_handler.hpp" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\core\libretro_host.hpp" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\core\main_loop.hpp" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\drivers\audio_driver.hpp" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\drivers\driver_types.hpp" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\drivers\input_driver.hpp" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\drivers\video_driver.hpp" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\input\wgi_input.hpp" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\libretro\libretro.h" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\storage\vfs_storage.hpp" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\ui\imgui_uwp_backend.hpp" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\ui\quick_menu.hpp" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\util\string_util.hpp" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\video\d3d12_video.hpp" />
+    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\video\shaders\compiled_shaders.hpp" />
+    <ClInclude Include="CoreUpdater.h" />
+    <ClInclude Include="miniz.h" />
+    <ClInclude Include="BladeMenu.h" />
+    <ClInclude Include="BladeTheme.h" />
+    <ClInclude Include="CoreRegistrations.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Wide310x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square150x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\LockScreenLogo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{db9086fe-bacc-4437-8272-1aa6642082db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Imgui">
+      <UniqueIdentifier>{12507bfd-d844-4523-80f8-908444493d33}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PropertySheet.props" />
+    <None Include="packages.config" />
+    <None Include="cores\mupen64plus_next_libretro.dll" />
+    <None Include="cores\fceumm_libretro.dll" />
+    <None Include="cores\snes9x_libretro.dll" />
+    <None Include="cores\genesis_plus_gx_libretro.dll" />
+    <None Include="cores\pcsx_rearmed_libretro.dll" />
+    <None Include="cores\gambatte_libretro.dll" />
+    <None Include="cores\mgba_libretro.dll" />
+    <None Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\RetroForgeX.sln" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="..\..\..\Downloads\imgui-master\imgui-master\misc\debuggers\imgui.natvis">
+      <Filter>Imgui</Filter>
+    </Natvis>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\video\shaders\quad_ps.hlsl" />
+    <FxCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\video\shaders\quad_vs.hlsl" />
+  </ItemGroup>
+</Project>
