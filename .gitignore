@@ -1,0 +1,23 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+ipch/
+x64/
+x86/
+ARM64/
+Win32/
+Debug/
+Release/
+Generated Files/
+AppPackages/
+BundleArtifacts/
+packages/
+*.aps
+*.log
+*.tlog
+# Local cores and test ROMs
+Cores/*.dll
+roms/

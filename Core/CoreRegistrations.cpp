@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "CoreRegistrations.h"
 
-namespace RetroForgeX
+namespace rfx
 {
     void RegisterAllCores(CoreUpdater& updater)
     {
