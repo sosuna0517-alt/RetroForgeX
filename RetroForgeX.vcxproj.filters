@@ -204,4 +204,10 @@
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="PropertySheet.props" />
+    <None Include="packages.config" />
+    <None Include="ARCHITECTURE.md" />
+    <None Include="README.md" />
+  </ItemGroup>
 </Project>
