@@ -6,7 +6,6 @@
     <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
     <CppWinRTGenerateWindowsMetadata>true</CppWinRTGenerateWindowsMetadata>
     <MinimalCoreWin>true</MinimalCoreWin>
-    <CppWinRTEnableComponentProjection>false</CppWinRTEnableComponentProjection>
     <ProjectGuid>{b51f3a04-f083-44f3-859a-9fbb97734956}</ProjectGuid>
     <ProjectName>RetroForgeX</ProjectName>
     <RootNamespace>RetroForgeX</RootNamespace>
