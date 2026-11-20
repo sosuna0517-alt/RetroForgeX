@@ -178,8 +178,8 @@ Status legend: `[ ]` not started, `[~]` in progress, `[x]` done and verified.
 | # | Milestone | Status | Verified on |
 | --- | --- | --- | --- |
 | M0 | Blank App (C++/WinRT) x64 project; `Core/ Graphics/ Shaders/ Storage/ UI/` folders + filters | [x] | Repo layout |
-| M1 | `ThirdParty/` vendored (ImGui 1.93.0, libretro headers, miniz); all sources compile | [~] | cl 14.44 /W4 + fxc SM5 + XAML pass 1 on DESKTOP-I40NUUM, 2026-11-18. Full MSBuild link/package still to run in VS |
-| M2 | D3D11 device + 3840x2160 composition swap chain on `SwapChainPanel` | [~] | Implemented, not run |
+| M1 | `ThirdParty/` vendored (ImGui 1.93.0, libretro headers, miniz); all sources compile | [x] | Full VS 2026 build (v145) + deploy to desktop on DESKTOP-I40NUUM, 2026-11-19 |
+| M2 | D3D11 device + 3840x2160 composition swap chain on `SwapChainPanel` | [~] | App deploys and launches on desktop; 4K output not yet checked |
 | M3 | Dear ImGui (dx11 + custom UWP backend) + Blade dashboard, gamepad/keyboard navigation | [~] | Implemented, not run |
 | M4 | Software libretro core: LoadPackagedLibrary, frame upload, XAudio2, WGI input | [~] | Implemented, not run |
 | M5 | CRT / aperture-grille pass at 4K, tunable from DISPLAY blade | [~] | Implemented, not run |
@@ -207,4 +207,5 @@ Status legend: `[ ]` not started, `[~]` in progress, `[x]` done and verified.
 
 ## 7. Changelog
 - 2026-11-18 – Initial ARCHITECTURE.md created (stack, folder layout, dependencies, milestones M0–M10).
+- 2026-11-19 – First successful VS build + desktop deploy. 258 Windows x64 nightly cores in `Cores\` (listed via .info files); reserved .ws/.wsc/.vb removed from manifest.
 - 2026-11-18 – RetroForgeX converted to XAML + SwapChainPanel + D3D11 + ImGui. New: DeviceResources, PostProcess, HLSL CRT + Channel Surf, LibretroCore (D3D11 HW render), AudioOutput, InputMapper, RomLibrary, Frontend, imgui_impl_uwp; BladeMenu gained 4K scaling, scrolling lists, adjustable values. Legacy C++ namespace `RetroForgeX` renamed to `rfx` (it collided with the WinRT namespace).
