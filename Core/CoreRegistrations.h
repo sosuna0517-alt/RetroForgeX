@@ -21,7 +21,7 @@
 
 #include "CoreUpdater.h"
 
-namespace RetroForgeX
+namespace rfx
 {
     // Implemented in CoreRegistrations.cpp - declared here so multiple
     // translation units can call it without redefinition errors.

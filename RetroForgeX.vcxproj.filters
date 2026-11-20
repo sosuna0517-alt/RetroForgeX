@@ -1,139 +1,222 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="App.cpp" />
-    <ClCompile Include="pch.cpp" />
-    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui-master\imgui.cpp">
-      <Filter>Imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui-master\imgui_demo.cpp">
-      <Filter>Imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui-master\imgui_draw.cpp">
-      <Filter>Imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui-master\imgui_tables.cpp">
-      <Filter>Imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui-master\imgui_widgets.cpp">
-      <Filter>Imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui-master\backends\imgui_impl_dx12.cpp">
-      <Filter>Imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\imgui-master\imgui-master\misc\cpp\imgui_stdlib.cpp">
-      <Filter>Imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\audio\xaudio2_audio.cpp" />
-    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\core\environment_handler.cpp" />
-    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\core\libretro_host.cpp" />
-    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\core\main_loop.cpp" />
-    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\input\wgi_input.cpp" />
-    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\storage\vfs_storage.cpp" />
-    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\ui\imgui_uwp_backend.cpp" />
-    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\ui\quick_menu.cpp" />
-    <ClCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\video\d3d12_video.cpp" />
-    <ClCompile Include="CoreUpdater.cpp" />
-    <ClCompile Include="miniz.c" />
-    <ClCompile Include="BladeMenu.cpp" />
-    <ClCompile Include="CoreRegistrations.cpp" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{f297ed41-e245-5007-a91d-e5a24c91b663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{e310cc4e-de4f-5ae2-8eac-735444e42022}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{b51b3a36-c817-5325-bd17-7a380bab150a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{f3dc9441-541d-55b6-bcc9-5505032159f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Storage">
+      <UniqueIdentifier>{df1590a2-625c-54fb-aed3-b7cf17970715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{04f87d14-a37e-54c4-9a65-868794db2be6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty">
+      <UniqueIdentifier>{3f69527f-7711-5c09-8532-da4407e9077f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{3971a7c4-e179-587f-8243-a58c0c6c377a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cores">
+      <UniqueIdentifier>{b7326c56-ca39-467b-901f-14711988a845}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="..\..\..\Downloads\libretro.h" />
-    <ClInclude Include="..\..\..\Downloads\imgui-master\imgui-master\imconfig.h">
-      <Filter>Imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Downloads\imgui-master\imgui-master\imgui.h">
-      <Filter>Imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Downloads\imgui-master\imgui-master\imgui_internal.h">
-      <Filter>Imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Downloads\imgui-master\imgui-master\imstb_rectpack.h">
-      <Filter>Imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Downloads\imgui-master\imgui-master\backends\imgui_impl_dx12.h">
-      <Filter>Imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\audio\xaudio2_audio.hpp" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\core\environment_handler.hpp" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\core\libretro_host.hpp" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\core\main_loop.hpp" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\drivers\audio_driver.hpp" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\drivers\driver_types.hpp" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\drivers\input_driver.hpp" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\drivers\video_driver.hpp" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\input\wgi_input.hpp" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\libretro\libretro.h" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\storage\vfs_storage.hpp" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\ui\imgui_uwp_backend.hpp" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\ui\quick_menu.hpp" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\util\string_util.hpp" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\include\video\d3d12_video.hpp" />
-    <ClInclude Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\video\shaders\compiled_shaders.hpp" />
-    <ClInclude Include="CoreUpdater.h" />
-    <ClInclude Include="miniz.h" />
-    <ClInclude Include="BladeMenu.h" />
-    <ClInclude Include="BladeTheme.h" />
-    <ClInclude Include="CoreRegistrations.h" />
+    <ClCompile Include="pch.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="App.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="MainPage.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Frontend.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\DeviceResources.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\PostProcess.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\LibretroCore.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\AudioOutput.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\InputMapper.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\CoreUpdater.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\CoreRegistrations.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Storage\RomLibrary.cpp">
+      <Filter>Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\BladeMenu.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\imgui_impl_uwp.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\imgui\imgui.cpp">
+      <Filter>ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\imgui\imgui_draw.cpp">
+      <Filter>ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\imgui\imgui_tables.cpp">
+      <Filter>ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\imgui\imgui_widgets.cpp">
+      <Filter>ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\imgui\imgui_demo.cpp">
+      <Filter>ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\imgui\backends\imgui_impl_dx11.cpp">
+      <Filter>ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\miniz\miniz.c">
+      <Filter>ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Assets\Wide310x150Logo.scale-200.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\StoreLogo.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square150x150Logo.scale-200.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="Assets\Square44x44Logo.scale-200.png">
+    <ClInclude Include="pch.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="App.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="MainPage.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Frontend.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\DeviceResources.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\PostProcess.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\LibretroCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\AudioOutput.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\InputMapper.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\CoreUpdater.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\CoreRegistrations.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Storage\RomLibrary.h">
+      <Filter>Storage</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\BladeMenu.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\BladeTheme.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\imgui_impl_uwp.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\imgui\imgui.h">
+      <Filter>ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\imgui\imconfig.h">
+      <Filter>ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\imgui\backends\imgui_impl_dx11.h">
+      <Filter>ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\libretro\libretro.h">
+      <Filter>ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\libretro\libretro_d3d.h">
+      <Filter>ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\libretro\libretro_d3d11.h">
+      <Filter>ThirdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\miniz\miniz.h">
+      <Filter>ThirdParty</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shaders\VS_Fullscreen.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\PS_CRT_ApertureGrille.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="Shaders\PS_ChannelSurf.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\LockScreenLogo.scale-200.png">
       <Filter>Assets</Filter>
     </Image>
     <Image Include="Assets\SplashScreen.scale-200.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="Assets\LockScreenLogo.scale-200.png">
+    <Image Include="Assets\Square150x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Wide310x150Logo.scale-200.png">
       <Filter>Assets</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+    <Page Include="MainPage.xaml" />
+    <Midl Include="App.idl" />
+    <Midl Include="MainPage.idl" />
     <AppxManifest Include="Package.appxmanifest" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Assets">
-      <UniqueIdentifier>{db9086fe-bacc-4437-8272-1aa6642082db}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Imgui">
-      <UniqueIdentifier>{12507bfd-d844-4523-80f8-908444493d33}</UniqueIdentifier>
-    </Filter>
+    <None Include="Shaders\Common.hlsli">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props" />
     <None Include="packages.config" />
-    <None Include="cores\mupen64plus_next_libretro.dll" />
-    <None Include="cores\fceumm_libretro.dll" />
-    <None Include="cores\snes9x_libretro.dll" />
-    <None Include="cores\genesis_plus_gx_libretro.dll" />
-    <None Include="cores\pcsx_rearmed_libretro.dll" />
-    <None Include="cores\gambatte_libretro.dll" />
-    <None Include="cores\mgba_libretro.dll" />
-    <None Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\RetroForgeX.sln" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Natvis Include="..\..\..\Downloads\imgui-master\imgui-master\misc\debuggers\imgui.natvis">
-      <Filter>Imgui</Filter>
-    </Natvis>
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\video\shaders\quad_ps.hlsl" />
-    <FxCompile Include="..\..\..\Downloads\RetroForgeX\RetroForgeX\src\video\shaders\quad_vs.hlsl" />
+    <None Include="ARCHITECTURE.md" />
+    <None Include="README.md" />
+    <None Include="Cores\*.dll">
+      <Filter>Cores</Filter>
+    </None>
+    <None Include="Cores\*.info">
+      <Filter>Cores</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -19,7 +19,7 @@
 
 #include "imgui.h"
 
-namespace RetroForgeX::BladeTheme
+namespace rfx::BladeTheme
 {
     // --- Palette ---
     constexpr ImU32 ColorBackground       = IM_COL32(4, 8, 5, 255);       // near-black w/ faint green cast

@@ -1,9 +1,7 @@
 <Solution>
   <Configurations>
-    <Platform Name="ARM" />
-    <Platform Name="ARM64" />
     <Platform Name="x64" />
-    <Platform Name="x86" />
+    <Platform Name="ARM64" />
   </Configurations>
   <Project Path="RetroForgeX.vcxproj" Id="b51f3a04-f083-44f3-859a-9fbb97734956">
     <Deploy />

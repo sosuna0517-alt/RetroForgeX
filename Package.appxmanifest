@@ -1,82 +1,107 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
-  Package.appxmanifest - RetroForgeX UWP/Xbox Dev Mode app package identity.
-
-  This lives in a packaging project (a UWP "Windows Application Packaging
-  Project" added alongside the RetroForgeX.vcxproj static/exe project in the
-  same VS2022 solution) or directly in the app project if RetroForgeX.vcxproj
-  is itself configured as a UWP executable. Either way, VS2022's "Create App
-  Packages..." command (or the MSBuild targets invoked by build_msix.ps1)
-  reads this file to produce the .msix/.appxbundle.
-
-  Replace the Publisher/PublisherDisplayName values with your own Dev Mode
-  test certificate's subject before signing (see build_msix.ps1).
+  RetroForgeX package manifest (UWP, Xbox Developer Mode).
+  Publisher must match the signing certificate subject (RetroForgeX_TemporaryKey.pfx -> CN=sosun).
+  broadFileSystemAccess is a restricted capability: after install, enable it under
+  Settings > Privacy > File system (desktop) or the app's "Manage app" settings (Xbox)
+  so E:\roms etc. can be read directly.
 -->
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-         xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-         xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-         IgnorableNamespaces="uap mp rescap">
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap mp rescap">
 
-    <Identity Name="RetroForgeX.EmulatorFrontend"
-              Publisher="CN=RetroForgeXDevCert"
-              Version="1.0.0.0"
-              ProcessorArchitecture="x64" />
-    <!-- Build an ARM64 package too (separate solution config) if you're
-         targeting a hardware Xbox Series/One devkit rather than the
-         Xbox emulator/Retail sandbox running on a PC. -->
+  <Identity
+    Name="RetroForgeX.EmulatorFrontend"
+    Publisher="CN=sosun"
+    Version="1.0.0.0" />
 
-    <mp:PhoneIdentity PhoneProductId="c9f1a7c2-6e3e-4e2a-9c2a-000000000000" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <mp:PhoneIdentity PhoneProductId="b51f3a04-f083-44f3-859a-9fbb97734956" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
-    <Properties>
-        <DisplayName>RetroForgeX</DisplayName>
-        <PublisherDisplayName>RetroForgeX</PublisherDisplayName>
-        <Logo>Assets\StoreLogo.png</Logo>
-    </Properties>
+  <Properties>
+    <DisplayName>RetroForge X</DisplayName>
+    <PublisherDisplayName>sosun</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
 
-    <Dependencies>
-        <!-- Windows.Universal covers Xbox Dev Mode's UWP host; there is no
-             separate "Windows.Xbox" device family declaration required for a
-             standard UWP DirectX app sideloaded via Dev Mode / Device Portal. -->
-        <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.19041.0" MaxVersionTested="10.0.22621.0" />
-    </Dependencies>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.18362.0" MaxVersionTested="10.0.26100.0" />
+  </Dependencies>
 
-    <Resources>
-        <Resource Language="x-generate" />
-    </Resources>
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
 
-    <Applications>
-        <Application Id="App"
-                     Executable="$targetnametoken$.exe"
-                     EntryPoint="RetroForgeX.App">
-            <uap:VisualElements DisplayName="RetroForgeX"
-                                Description="A high-performance Libretro frontend for Xbox Dev Mode."
-                                BackgroundColor="black"
-                                Square150x150Logo="Assets\Square150x150Logo.png"
-                                Square44x44Logo="Assets\Square44x44Logo.png">
-                <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"
-                                 Square310x310Logo="Assets\LargeTile.png"
-                                 Square71x71Logo="Assets\SmallTile.png" />
-                <uap:SplashScreen Image="Assets\SplashScreen.png" />
-            </uap:VisualElements>
-        </Application>
-    </Applications>
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="RetroForgeX.App">
+      <uap:VisualElements
+        DisplayName="RetroForge X"
+        Description="4K multi-console libretro frontend for Xbox Developer Mode"
+        BackgroundColor="#000000"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#000000" />
+      </uap:VisualElements>
+      <Extensions>
+        <!-- Required by the removableStorage capability (USB drives). -->
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="retroroms">
+            <uap:DisplayName>Game ROM</uap:DisplayName>
+            <uap:SupportedFileTypes>
+                <uap:FileType>.nes</uap:FileType>
+                <uap:FileType>.fds</uap:FileType>
+                <uap:FileType>.unf</uap:FileType>
+                <uap:FileType>.sfc</uap:FileType>
+                <uap:FileType>.smc</uap:FileType>
+                <uap:FileType>.fig</uap:FileType>
+                <uap:FileType>.swc</uap:FileType>
+                <uap:FileType>.gb</uap:FileType>
+                <uap:FileType>.gbc</uap:FileType>
+                <uap:FileType>.gba</uap:FileType>
+                <uap:FileType>.sgb</uap:FileType>
+                <uap:FileType>.md</uap:FileType>
+                <uap:FileType>.gen</uap:FileType>
+                <uap:FileType>.smd</uap:FileType>
+                <uap:FileType>.bin</uap:FileType>
+                <uap:FileType>.sms</uap:FileType>
+                <uap:FileType>.gg</uap:FileType>
+                <uap:FileType>.sg</uap:FileType>
+                <uap:FileType>.32x</uap:FileType>
+                <uap:FileType>.pce</uap:FileType>
+                <uap:FileType>.sgx</uap:FileType>
+                <uap:FileType>.cue</uap:FileType>
+                <uap:FileType>.chd</uap:FileType>
+                <uap:FileType>.iso</uap:FileType>
+                <uap:FileType>.pbp</uap:FileType>
+                <uap:FileType>.n64</uap:FileType>
+                <uap:FileType>.z64</uap:FileType>
+                <uap:FileType>.v64</uap:FileType>
+                <uap:FileType>.ndd</uap:FileType>
+                <uap:FileType>.a26</uap:FileType>
+                <uap:FileType>.a78</uap:FileType>
+                <uap:FileType>.lnx</uap:FileType>
+                <uap:FileType>.ngp</uap:FileType>
+                <uap:FileType>.ngc</uap:FileType>
+                <uap:FileType>.vec</uap:FileType>
+                <uap:FileType>.col</uap:FileType>
+                <uap:FileType>.int</uap:FileType>
+                <uap:FileType>.zip</uap:FileType>
+                <uap:FileType>.7z</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
 
-    <Capabilities>
-        <!-- USB / external drive ROM & BIOS libraries via
-             Windows::Storage::KnownFolders::RemovableDevices (see vfs_storage.cpp). -->
-        <uap:Capability Name="removableStorage" />
-
-        <!--
-          Optional, restricted capability; uncomment only for a sideload/Dev
-          Mode build if you need to browse arbitrary user-chosen folders
-          (e.g. an existing RetroArch ROMs directory on the system drive)
-          instead of routing through a FolderPicker (which needs no capability
-          at all) or RemovableDevices. broadFileSystemAccess requires store
-          approval to ship publicly; Dev Mode sideloading does not enforce
-          that gate, but keep it disabled unless you actually need it.
-
-          <rescap:Capability Name="broadFileSystemAccess" />
-        -->
-    </Capabilities>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <rescap:Capability Name="broadFileSystemAccess" />
+    <uap:Capability Name="removableStorage" />
+  </Capabilities>
 </Package>

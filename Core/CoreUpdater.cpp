@@ -13,7 +13,7 @@ using namespace winrt::Windows::Web::Http::Headers;
 using namespace winrt::Windows::Storage;
 using namespace winrt::Windows::Storage::Streams;
 
-namespace RetroForgeX
+namespace rfx
 {
     CoreUpdater::CoreUpdater()
     {

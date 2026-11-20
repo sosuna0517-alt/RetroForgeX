@@ -30,7 +30,7 @@
 #include <vector>
 #include <functional>
 
-namespace RetroForgeX
+namespace rfx
 {
     // Describes one core RetroForgeX knows how to fetch.
     struct CoreInfo
