@@ -87,9 +87,6 @@
                 <uap:FileType>.lnx</uap:FileType>
                 <uap:FileType>.ngp</uap:FileType>
                 <uap:FileType>.ngc</uap:FileType>
-                <uap:FileType>.ws</uap:FileType>
-                <uap:FileType>.wsc</uap:FileType>
-                <uap:FileType>.vb</uap:FileType>
                 <uap:FileType>.vec</uap:FileType>
                 <uap:FileType>.col</uap:FileType>
                 <uap:FileType>.int</uap:FileType>
