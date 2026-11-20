@@ -25,6 +25,9 @@
     <Filter Include="Assets">
       <UniqueIdentifier>{3971a7c4-e179-587f-8243-a58c0c6c377a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Cores">
+      <UniqueIdentifier>{b7326c56-ca39-467b-901f-14711988a845}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -209,5 +212,11 @@
     <None Include="packages.config" />
     <None Include="ARCHITECTURE.md" />
     <None Include="README.md" />
+    <None Include="Cores\*.dll">
+      <Filter>Cores</Filter>
+    </None>
+    <None Include="Cores\*.info">
+      <Filter>Cores</Filter>
+    </None>
   </ItemGroup>
 </Project>
