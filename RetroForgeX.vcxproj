@@ -249,6 +249,9 @@
     <None Include="Cores\*.dll">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="Cores\*.info">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

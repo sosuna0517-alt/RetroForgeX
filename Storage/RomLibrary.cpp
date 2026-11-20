@@ -61,6 +61,38 @@ namespace rfx
                 return nullptr;
             }
         }
+
+        // Parses a libretro .info file (key = "value" lines). Returns false if missing.
+        bool ReadCoreInfo(std::wstring const& path, std::map<std::string, std::string>& out)
+        {
+            std::ifstream in(path);
+            if (!in)
+            {
+                return false;
+            }
+            std::string line;
+            while (std::getline(in, line))
+            {
+                auto eq = line.find('=');
+                if (eq == std::string::npos || line[0] == '#')
+                {
+                    continue;
+                }
+                std::string key = line.substr(0, eq);
+                std::string value = line.substr(eq + 1);
+                auto trim = [](std::string& t)
+                {
+                    while (!t.empty() && (t.back() == ' ' || t.back() == '\r' || t.back() == '"')) t.pop_back();
+                    size_t i = 0;
+                    while (i < t.size() && (t[i] == ' ' || t[i] == '"')) ++i;
+                    t.erase(0, i);
+                };
+                trim(key);
+                trim(value);
+                out[key] = value;
+            }
+            return true;
+        }
     }
 
     void RomLibrary::ScanCores()
@@ -83,16 +115,31 @@ namespace rfx
                     entry.fileName = name;
                     entry.packagePath = L"Cores\\" + name;
 
-                    LibretroCore::ProbeResult probe;
-                    if (!LibretroCore::Probe(entry.packagePath, probe))
+                    // Prefer the libretro .info file next to the dll: it avoids loading
+                    // every core (some are 50+ MB) just to list it.
+                    std::map<std::string, std::string> info;
+                    std::wstring infoPath = std::wstring{ coresFolder.Path() } + L"\\" +
+                        name.substr(0, name.size() - 4) + L".info";
+                    if (ReadCoreInfo(infoPath, info) && !info["supported_extensions"].empty())
                     {
-                        OutputDebugStringW((L"[RomLibrary] Could not load core " + name + L"\n").c_str());
-                        continue;
+                        entry.name = !info["display_name"].empty() ? info["display_name"] : winrt::to_string(name);
+                        entry.version = info["display_version"];
+                        entry.extensions = SplitExtensions(info["supported_extensions"]);
+                        entry.needFullPath = info["needs_fullpath"] == "true";
                     }
-                    entry.name = probe.libraryName.empty() ? winrt::to_string(name) : probe.libraryName;
-                    entry.version = probe.libraryVersion;
-                    entry.extensions = SplitExtensions(probe.validExtensions);
-                    entry.needFullPath = probe.needFullPath;
+                    else
+                    {
+                        LibretroCore::ProbeResult probe;
+                        if (!LibretroCore::Probe(entry.packagePath, probe))
+                        {
+                            OutputDebugStringW((L"[RomLibrary] Could not load core " + name + L"\n").c_str());
+                            continue;
+                        }
+                        entry.name = probe.libraryName.empty() ? winrt::to_string(name) : probe.libraryName;
+                        entry.version = probe.libraryVersion;
+                        entry.extensions = SplitExtensions(probe.validExtensions);
+                        entry.needFullPath = probe.needFullPath;
+                    }
                     cores.push_back(std::move(entry));
                 }
             }
